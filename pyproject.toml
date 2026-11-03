@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdfjin-ai-chat"
+version = "0.1.0"
+authors = [
+  { name="PDFJin Team", email="support@pdfjin.com" },
+]
+description = "Chat with any PDF document using AI (Gemini, Claude, or OpenAI) by PDFJin"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["pdf", "pdfjin", "cli", "pdf-tools", "document-processing", "ai"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Printing",
+    "Topic :: Utilities",
+]
+dependencies = ["pypdf>=3.0.0", "google-generativeai>=0.4.0"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://pdfjin.com"
+"Online Tool" = "https://pdfjin.com/pages/ai-pdf-chat.html"
+"Source" = "https://github.com/pdfjin/pdfjin-ai-chat"
+"Bug Tracker" = "https://github.com/pdfjin/pdfjin-ai-chat/issues"
+
+[project.scripts]
+pdfjin-ai-chat = "pdfjin_ai_chat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdfjin_ai_chat*"]
